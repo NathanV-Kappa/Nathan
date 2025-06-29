@@ -1,0 +1,113 @@
+// Name: Nathan Vanderpool
+// Class: CS 210 -- Programming Languages
+// Professor: Charles Griffith
+// Date: 5/25/2025
+
+#include <iostream>
+#include <iomanip> // To use setw and setfill
+
+using namespace std;
+
+// 12-Hour Clock display
+// Function to display the clock in 12-hour format
+void displayTime12(int hours, int minutes, int seconds) {
+    string period = (hours < 12 || hours == 24) ? "AM" : "PM"; // Condition statement to determine if AM or PM.
+    hours = (hours == 0 || hours == 24) ? 12 : (hours > 12 ? hours - 12 : hours); // Double condition statement to determine if hours need to be subtracted by 12 from inputted initial time
+
+    cout << "*       "
+        << setw(2) << setfill('0') << hours << ":"
+        << setw(2) << setfill('0') << minutes << ":"
+        << setw(2) << setfill('0') << seconds << " " << period << "      *";
+}
+
+// 24-Hour Clock display
+// Function to display the clock
+void displayTime24(int hours, int minutes, int seconds) {
+    cout << "*        "
+        << setfill('0') << setw(2) << hours << ":"
+        << setfill('0') << setw(2) << minutes << ":"
+        << setfill('0') << setw(2) << seconds << "        *" << endl;
+}
+
+// Adding time functions (which all communicate with each other to increment the time correctly, for example, if seconds equals 60 then convert it to 0 and add 1 to minutes)
+// Function to add one hour
+void addHour(int& hours) {
+    hours = (hours + 1) % 24;
+}
+
+// Function to add one minute
+void addMinute(int& minutes, int& hours) {
+    minutes++;
+    if (minutes >= 60) {
+        minutes = 0;
+        addHour(hours);
+    }
+}
+
+// Function to add one second
+void addSecond(int& seconds, int& minutes, int& hours) {
+    seconds++;
+    if (seconds >= 60) {
+        seconds = 0;
+        addMinute(minutes, hours);
+    }
+}
+
+int main() {
+    int hours, minutes, seconds; //variables for the display function calls and switch statement
+    int choice; // User's input for the menu
+
+    // Gets the initial time from the user
+    // For example if 13 for hours is entered then the 12-Hour Clock will convert hours into 1 for the time display and it will be also PM instead of AM
+    // Also, "HH MM SS" is just for the user as it can work if something like "1 1 1" was inputted then it would fill in zeros in its place like this, 01:01:01 AM
+    cout << "Enter initial (military/24-hour) time (HH MM SS): ";
+    cin >> hours >> minutes >> seconds;
+
+    // do-while loop to display the menu and time after each input until finished with program
+    do {
+        // Displays the current time
+        cout << endl << endl;
+        cout << "**************************" << "    " << "**************************" << endl;
+        cout << "*      12-Hour Clock     *" << "    " << "*      24-Hour Clock     *" << endl;
+        displayTime12(hours, minutes, seconds);
+        cout << "    ";
+        displayTime24(hours, minutes, seconds);
+        cout << "**************************" << "    " << "**************************" << endl << endl;
+
+        // Displays the menu
+        cout << "**************************" << endl;
+        cout << "* 1 - Add one hour       *" << endl;
+        cout << "* 2 - Add one minute     *" << endl;
+        cout << "* 3 - Add one second     *" << endl;
+        cout << "* 4 - Exit Program       *" << endl;
+        cout << "**************************" << endl << endl << endl;
+
+        cout << "Enter your choice: ";
+        cin >> choice;
+
+        // Perform action based on user's choice from the menu provided to them
+        switch (choice) {
+        case 1: // Adds 1 hour
+            addHour(hours);
+            break;
+
+        case 2: // Adds 1 minute
+            addMinute(minutes, hours);
+            break;
+
+        case 3: // Adds 1 second
+            addSecond(seconds, minutes, hours);
+            break;
+
+        case 4: // Exits the program
+            cout << "Exiting program." << endl;
+            break;
+
+        default: // Error message in case user does not use 1, 2, 3, or 4
+            cout << endl << "Invalid choice. Please try again." << endl;   
+        }
+
+    } while (choice != 4); // Loops until case 4 is selected by user
+
+    return 0;
+}
