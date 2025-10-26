@@ -38,3 +38,14 @@ The use of functions when using C++ will be useful when applying to other projec
 
 # How did you make this program maintainable, readable, and adaptable?
 By using comments and laying out in order of how both clocks work help made it very reable and maintainable. As without them it would take a bit of analyzing of what the code is trying to do and differentiate which is the 12 and 24 hour clock.
+
+# CS 250 Module Eight Journal
+
+# How do I interpret user needs and implement them into a program? How does creating “user stories” help with this?
+To interpret user needs, I start by engaging with stakeholders through interviews, surveys, or observation to understand their goals, pain points, and expectations. This involves asking targeted questions to clarify requirements and prioritizing features based on their needs. Creating user stories helps by framing these needs in a structured format, typically: "As a [user type], I want [functionality] so that [benefit]." This approach keeps the focus on the user’s perspective, making requirements clear and actionable. For example, a user story like "As a customer, I want to filter products by price so that I can find affordable options" guides developers to implement specific functionality, ensuring the program aligns with user expectations.
+
+# How do I approach developing programs? What Agile processes do I hope to incorporate into my future development work?
+I approach program development by breaking the project into manageable phases: planning, designing, coding, testing, and iterating. I prioritize incremental progress, starting with a minimum viable product (MVP) and refining it based on feedback. Agile processes I hope to incorporate include Scrum for structured sprints and daily stand-ups to keep teams aligned, and Kanban to visualize workflow and manage tasks efficiently. I also value iterative development and continuous integration, ensuring code is tested and integrated frequently to catch issues early. These practices promote flexibility, collaboration, and rapid adaptation to changing requirements.
+
+# What does it mean to be a good team member in software development?
+Being a good team member in software development means communicating clearly, collaborating effectively, and contributing to a positive team dynamic. This includes actively listening to others’ ideas, sharing knowledge, and being open to feedback. A good team member writes clean, maintainable code, documents their work, and respects agreed-upon processes like code reviews or version control practices (e.g., using Git). They also take responsibility for their tasks, help teammates when needed, and stay adaptable to shifting priorities. Ultimately, it’s about fostering trust, ensuring alignment toward shared goals, and delivering quality work together.
