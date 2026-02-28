@@ -41,7 +41,7 @@ Emphasis on **security**, **role-based access**, **auditability**, and **online 
 **Why:** While I noted overbooking risks and lack of real-time availability checks, the explanation could be more proactive and forward-looking.
 
 **Improvements:**
-- Explicitly call out the absence of **automated conflict detection** (instructor/vehicle double-booking prevention)
+- Explicitly call out the absence of automated conflict detection (instructor/vehicle double-booking prevention)
 - Recommend a high-priority future enhancement: centralized real-time availability calendar with locking during reservation
 - Suggest short-term mitigation: rely on admin/secretary manual review for phone/in-person bookings to catch conflicts
 - Frame limitations more constructively — show awareness of how to evolve the system rather than just listing gaps
