@@ -1,3 +1,85 @@
+# CS 300 Module Eight Journal
+
+## 1. What was the problem you were solving in the projects for this course?
+
+The core problem was building an efficient advising assistance program for ABCU's Computer Science department advisors. Advisors needed a tool to:
+
+- Load course data (course number, title, and variable prerequisites) from a CSV file
+- Print a complete alphanumeric sorted list of all courses (for creating sample schedules)
+- Look up and display details for a specific course, including its title and full list of prerequisites
+
+The program had to handle real advisor workflows: quick access to individual course info (frequent lookups) and generating sorted overviews without manual sorting each time. Data could have hundreds of courses, variable prerequisites, and needed to be case-insensitive for user input convenience. The challenge was choosing and implementing the right data structure to balance loading, sorted output, and fast lookups while keeping code maintainable and memory-efficient.
+
+## 2. How did you approach the problem? (Including why data structures are important to understand)
+
+I approached it systematically:
+
+- **Requirements analysis** (Project One): Studied the menu needs (load, print sorted list, print course info) and evaluated three data structures — Vector, Hash Table, and Binary Search Tree (BST) — with Big-O analysis for each operation.
+- **Comparison & selection**: Created runtime tables and pros/cons lists. BST emerged as the best fit because:
+  - It automatically maintains alphanumeric order → O(n) in-order traversal for printing the sorted list (no extra sort step needed, unlike Vector or Hash Table's O(n log n) sort every time).
+  - Average O(log n) lookups for individual courses and prerequisites → much faster than Vector's O(n) linear search, and close enough to Hash Table's O(1) for this scale.
+  - Loading is O(n log n) average (acceptable since it happens once).
+- **Implementation** (Project Two): Built a BST in C++ with:
+  - `Course` struct (number, title, vector of prereqs)
+  - `Node` for tree structure
+  - Recursive insert, search, and in-order traversal
+  - Case-insensitive handling (uppercase normalization)
+  - Memory management (destructor to prevent leaks)
+  - Robust file parsing with error/warning messages
+- **User experience**: Menu loop with validation, data-loaded checks, sample output formatting to match requirements.
+
+**Why understanding data structures is important** — they directly determine efficiency, scalability, and suitability:
+
+- Wrong choice (e.g., Vector for everything) leads to slow searches or repeated expensive sorts.
+- Right choice (BST here) optimizes frequent operations (sorted print + lookups) without overcomplicating code.
+- Trade-offs (time vs. space, average vs. worst case) become clear only when you compare structures — this prevents performance bottlenecks in real applications.
+
+## 3. How did you overcome any roadblocks you encountered while going through the activities/project?
+
+Several roadblocks appeared, but I addressed them methodically:
+
+- **CSV parsing challenges** — Variable number of prerequisites, empty fields, potential malformed lines.
+  - Solution: Used `stringstream` + loop to collect all tokens after title; skipped empty prereq fields; added line-number warnings for invalid lines.
+
+- **Case-insensitive lookups** — Users might enter "csci101" or "CSCI101".
+  - Solution: Normalized all course numbers to uppercase on load and during searches (using a `toUpper` utility with `transform` and lambda).
+
+- **Memory management in C++** — Avoiding leaks with dynamic nodes.
+  - Solution: Implemented recursive post-order `destroy` in destructor; ensured no duplicate inserts (BST naturally handles equality by ignoring).
+
+- **Menu input issues** — Mixing `cin >>` and `getline` caused leftover newline problems when reading filenames.
+  - Solution: Added `cin.ignore(numeric_limits<streamsize>::max(), '\n')` after numeric input to clear buffer before `getline`.
+
+- **Prerequisite lookup efficiency** — Printing prereqs is simple, but ensuring prereq courses exist isn't required — kept it simple per spec but noted in comments.
+
+Debugging used print statements, step-through in debugger, and testing with sample CSV to verify sorted order and prereq lists.
+
+## 4. How has your work on this project expanded your approach to designing software and developing programs?
+
+This project shifted my design mindset significantly:
+
+- From "just make it work" to **intentional data structure selection** based on operations and access patterns.
+- Emphasized **early Big-O analysis** — comparing Vector/Hash/BST forced me to quantify trade-offs instead of guessing.
+- Strengthened **modular design** — Separating concerns (loading, BST class, printing, menu) made code easier to test and extend.
+- Highlighted **error handling & robustness** — Warnings for bad lines, user-friendly messages, and data validation prevent crashes in real use.
+- Reinforced **documentation & comments** — Clear header comments, inline explanations, and pseudocode in Project One helped me (and graders) understand intent quickly.
+
+Overall, I now start projects by asking: "What are the dominant operations? Which structure optimizes them? What are the trade-offs?" This leads to more scalable, performant code.
+
+## 5. How has your work on this project evolved the way you write programs that are maintainable, readable, and adaptable?
+
+Key evolutions in my coding style:
+
+- **Readability** — Meaningful variable/function names (`printInOrder`, `toUpper`), consistent formatting, detailed comments explaining *why* (e.g., BST choice rationale).
+- **Maintainability** — Encapsulated BST logic in a class with public methods; destructor for cleanup; separate utilities (toUpper, loadCourses) for reuse.
+- **Adaptability** — BST design allows easy extension (e.g., add course description field, support removal, or switch to self-balancing AVL if n grows large). Vector of prereqs is flexible for any number.
+- **Defensive programming** — Checks for loaded data before operations; graceful error messages; case-insensitivity for user convenience.
+- **Testing mindset** — Built with small testable pieces (insert/search helpers) and validated against sample output.
+
+Before this course, I might have defaulted to arrays/vectors everywhere. Now I prioritize structure choice, clean abstraction, and future-proofing — resulting in code that's easier for others (or future me) to understand, fix, and expand.
+
+This project was a great step toward writing professional-grade C++ software.
+
 # CS 255 Module Eight Journal
 
 ## 1. Project Summary
