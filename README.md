@@ -6,7 +6,7 @@
 **Purpose:** Help students pass their DMV driving tests by offering better training — a combination of online theory classes/practice tests and on-the-road practical driving lessons.
 
 **System Type Requested:**  
-A **web-based, cloud-hosted system** accessible from computers and mobile devices to manage:
+A web-based, cloud-hosted system accessible from computers and mobile devices to manage:
 
 - Customer registration & account management
 - Selection and online purchase of training packages (3 predefined packages)
@@ -21,18 +21,18 @@ Emphasis on **security**, **role-based access**, **auditability**, and **online 
 
 ## 2. What I Did Particularly Well
 
-- Accurately captured client needs from the interview and translated them into clear, client-focused **UML diagrams**:
+- Accurately captured client needs from the interview and translated them into clear, client-focused UML diagrams:
   - Use Case Diagram → showed main user interactions
   - Activity Diagrams → detailed flows (e.g., registration, login, payment, reservation)
   - Sequence Diagram → payment transaction logic (approval/decline)
   - Class Diagram → core entities and relationships
-- Made **security** a first-class concern from the beginning:
+- Made security a first-class concern from the beginning:
   - Password hashing, credit card tokenization
   - Role-based access control (RBAC)
   - HTTPS/SSL, input validation, PCI DSS-compliant payment gateway
   - Audit logging and activity reports
-- Clearly documented **functional** and **non-functional requirements** (performance <3s response, support for 500 concurrent users during peaks)
-- Wrote a thorough and honest **limitations** section that demonstrated realism and self-awareness about scope boundaries
+- Clearly documented functional and non-functional requirements (performance <3s response, support for 500 concurrent users during peaks)
+- Wrote a thorough and honest limitations section that demonstrated realism and self-awareness about scope boundaries
 
 ## 3. One Part I Would Revise
 
@@ -81,11 +81,11 @@ Emphasis on **security**, **role-based access**, **auditability**, and **online 
 5. Present models to stakeholders for feedback → iterate
 
 **Techniques/strategies I plan to use more in the future:**
-- **User stories** or **Jobs-to-be-Done** framework → capture needs from each role’s perspective
-- Early **low-fidelity prototyping** (wireframes, clickable mocks) to validate UI flows
-- **MoSCoW prioritization** (Must/Should/Could/Won’t) → clearer scope agreement with client
-- Maintain a living **risks & assumptions log** from day one
-- Run **domain modeling workshops** with stakeholders to refine entities collaboratively
+- User stories or Jobs-to-be-Done framework → capture needs from each role’s perspective
+- Early low-fidelity prototyping (wireframes, clickable mocks) to validate UI flows
+- MoSCoW prioritization (Must/Should/Could/Won’t) → clearer scope agreement with client
+- Maintain a living risks & assumptions log from day one
+- Run domain modeling workshops with stakeholders to refine entities collaboratively
 - Short, regular feedback loops (bi-weekly diagram walkthroughs) to catch misunderstandings quickly
 
 This user-centered, iterative, and transparent approach helps deliver systems that are actually useful and easier to evolve.
