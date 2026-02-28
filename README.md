@@ -1,3 +1,95 @@
+# CS 255 Module Eight Journal
+
+## 1. Project Summary
+
+**Client:** DriverPass (founded by Liam)  
+**Purpose:** Help students pass their DMV driving tests by offering better training — a combination of online theory classes/practice tests and on-the-road practical driving lessons.
+
+**System Type Requested:**  
+A **web-based, cloud-hosted system** accessible from computers and mobile devices to manage:
+
+- Customer registration & account management
+- Selection and online purchase of training packages (3 predefined packages)
+- Self-service scheduling, modification, and cancellation of driving lessons
+- Tracking of lesson details (instructor, vehicle, date/time, pickup/drop-off location)
+- Secure payment processing
+- Progress tracking (online test results, driver lesson notes/comments)
+- Administrative functions (reports, activity logs, user/role management)
+- Basic flexibility (e.g., ability to disable packages)
+
+Emphasis on **security**, **role-based access**, **auditability**, and **online accessibility** from anywhere.
+
+## 2. What I Did Particularly Well
+
+- Accurately captured client needs from the interview and translated them into clear, client-focused **UML diagrams**:
+  - Use Case Diagram → showed main user interactions
+  - Activity Diagrams → detailed flows (e.g., registration, login, payment, reservation)
+  - Sequence Diagram → payment transaction logic (approval/decline)
+  - Class Diagram → core entities and relationships
+- Made **security** a first-class concern from the beginning:
+  - Password hashing, credit card tokenization
+  - Role-based access control (RBAC)
+  - HTTPS/SSL, input validation, PCI DSS-compliant payment gateway
+  - Audit logging and activity reports
+- Clearly documented **functional** and **non-functional requirements** (performance <3s response, support for 500 concurrent users during peaks)
+- Wrote a thorough and honest **limitations** section that demonstrated realism and self-awareness about scope boundaries
+
+## 3. One Part I Would Revise
+
+**Section to revise:** System Limitations – specifically the discussion of lesson scheduling/reservations
+
+**Why:** While I noted overbooking risks and lack of real-time availability checks, the explanation could be more proactive and forward-looking.
+
+**Improvements:**
+- Explicitly call out the absence of **automated conflict detection** (instructor/vehicle double-booking prevention)
+- Recommend a high-priority future enhancement: centralized real-time availability calendar with locking during reservation
+- Suggest short-term mitigation: rely on admin/secretary manual review for phone/in-person bookings to catch conflicts
+- Frame limitations more constructively — show awareness of how to evolve the system rather than just listing gaps
+
+## 4. Interpreting & Implementing User Needs
+
+**How I interpreted needs:**
+- From the interview transcript:
+  - Customers want self-service: register, buy packages, schedule/cancel/modify lessons, view test progress & driver notes
+  - Owner (Liam) wants tracking/auditability (who changed what), reports, flexibility to disable packages
+  - IT officer (Ian) needs full admin access (reset passwords, block users)
+  - Secretary needs to book appointments over phone
+  - Emphasis on secure payment handling and cloud/web access
+
+**How I implemented them:**
+- Use Case & Activity diagrams → centered on customer self-service and admin flows
+- RBAC in Class & Use Case diagrams → matched different roles (student, secretary, IT, owner)
+- Class diagram attributes → appointmentDate, instructorName, vehicle, driver comments, pickup/drop-off
+- Payment gateway integration + tokenization → secure credit card handling
+- Email integration → password resets, receipts
+- Focused on web/cloud delivery with HTTPS
+
+**Why user needs are critical in design:**
+- Ensures the system solves real problems → higher adoption & value
+- Prevents building unused features → saves time & money
+- Drives smart prioritization & reduces scope creep
+- Increases stakeholder satisfaction & creates foundation for future iterations
+- Improves usability → lowers support costs & training needs
+
+## 5. My Software Design Approach & Future Strategies
+
+**Current approach:**
+1. Deep requirements gathering (stakeholder interviews, detailed note-taking)
+2. Early modeling with UML to visualize & validate understanding
+3. Prioritize must-haves, explicitly document limitations & trade-offs
+4. Build security & performance considerations in from the start
+5. Present models to stakeholders for feedback → iterate
+
+**Techniques/strategies I plan to use more in the future:**
+- **User stories** or **Jobs-to-be-Done** framework → capture needs from each role’s perspective
+- Early **low-fidelity prototyping** (wireframes, clickable mocks) to validate UI flows
+- **MoSCoW prioritization** (Must/Should/Could/Won’t) → clearer scope agreement with client
+- Maintain a living **risks & assumptions log** from day one
+- Run **domain modeling workshops** with stakeholders to refine entities collaboratively
+- Short, regular feedback loops (bi-weekly diagram walkthroughs) to catch misunderstandings quickly
+
+This user-centered, iterative, and transparent approach helps deliver systems that are actually useful and easier to evolve.
+
 # CS 230 Module Eight Journal
 
 # Briefly summarize The Gaming Room client and their software requirements. Who was the client? What type of software did they want you to design?
