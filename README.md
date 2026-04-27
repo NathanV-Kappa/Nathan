@@ -10,7 +10,7 @@ I ensure my code is **functional** by:
 - Writing thorough JUnit 5 tests for both normal cases and error cases (null values, too-long strings, invalid phone numbers, past dates, etc.)
 - Achieving high test coverage across all classes
 
-For **security and reliability**, I:
+For **security and reliability**:
 - Made ID fields `final` (immutable) so they cannot be changed after creation
 - Throw clear `IllegalArgumentException` messages for any invalid input
 - Used defensive programming (like copying the Date object in Appointment) to prevent unexpected changes
