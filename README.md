@@ -1,3 +1,46 @@
+# CS 320 Module Eight Journal
+
+Reflecting on the work I’ve done in these projects has been very valuable. It helped me better understand how to write clean, reliable code and how important testing is in software development.
+
+## How can I ensure that my code, program, or software is functional and secure?
+
+I ensure my code is **functional** by:
+- Following the exact requirements for each field (length limits, formats, required values, etc.)
+- Adding validation in the constructors and setter methods so bad data is caught immediately
+- Writing thorough JUnit 5 tests for both normal cases and error cases (null values, too-long strings, invalid phone numbers, past dates, etc.)
+- Achieving high test coverage across all classes
+
+For **security and reliability**, I:
+- Made ID fields `final` (immutable) so they cannot be changed after creation
+- Throw clear `IllegalArgumentException` messages for any invalid input
+- Used defensive programming (like copying the Date object in Appointment) to prevent unexpected changes
+- Tested every edge case I could think of
+
+## How do I interpret user needs and incorporate them into a program?
+
+I start by carefully reading the project requirements and breaking them down into individual rules. For example, the Contact service had very specific rules: contact ID must be 10 characters or less, phone must be exactly 10 digits, etc.
+
+I turn those rules directly into code:
+- Each rule becomes a validation check in the constructor or setter
+- I create test cases that prove each rule is enforced
+- I make sure the program only does what the requirements ask for (no extra features)
+
+This approach helped make sure the final services would meet the client’s needs for their mobile application.
+
+## How do I approach designing software?
+
+My general approach to designing software is:
+1. Understand the requirements clearly
+2. Design the main classes (like Contact, Task, Appointment) with all the validation built in
+3. Create service classes to manage multiple objects (add, delete, update)
+4. Write tests as I go to verify everything works
+5. Keep the code organized, well-commented, and easy to read
+
+I focused on keeping the code simple and modular. For example, each service uses a `HashMap` to store items by their ID, and all business rules live inside the domain classes. This made the code much easier to test and maintain.
+
+
+
+
 # CS 300 Module Eight Journal
 
 ## 1. What was the problem you were solving in the projects for this course?
