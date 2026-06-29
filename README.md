@@ -1,3 +1,17 @@
+# CS 340 Module Eight Journal
+
+## How do you write programs that are maintainable, readable, and adaptable?
+I focus on clean code practices such as meaningful variable names, modular design, and thorough comments. In Project One I created a reusable `AnimalShelter` class with clear methods for each CRUD operation. In Project Two I reused that exact module to connect the dashboard widgets to the database. This separation of concerns made the code much more maintainable — changes to database logic only need to happen in one place. I also used consistent structure (sections for Model, View, Controller) and added detailed comments explaining each callback. This approach makes the code easier to read, debug, and extend in the future.
+
+## How else could you use this CRUD Python module in the future?
+The `AnimalShelter` class is highly reusable. It could be used in other client applications (web, desktop, or mobile), reporting tools, or even automated scripts for data cleanup and analysis. Because it handles authentication and all CRUD operations securely, it serves as a solid foundation for any future project that needs to interact with the Austin Animal Center (or similar) MongoDB database.
+
+## How do you approach a problem as a computer scientist?
+I start by thoroughly understanding the requirements (in this case, reviewing the Dashboard Specifications Document and the Rescue Type table). I then break the problem into smaller parts: data layer (CRUD), business logic (filter queries), and presentation (dashboard widgets). I reuse existing components when possible (the CRUD module) and test iteratively. This project differed from previous assignments because it required integrating a full-stack solution — database + interactive UI with real-time updates — rather than just backend logic. In the future I would continue using this structured, requirements-first approach and add more automated testing (e.g., unit tests for callbacks).
+
+## What do computer scientists do, and why does it matter?
+Computer scientists solve real-world problems by designing, building, and improving systems that process and present data effectively. In this project, the dashboard helps Grazioso Salvare quickly identify suitable rescue dogs instead of manually searching through records. This saves time, reduces errors, and allows the organization to focus on training and deployment of dogs that can save lives. My work demonstrates how software can turn raw data into actionable insights, which directly improves operational efficiency for companies and organizations like Grazioso Salvare.
+
 # CS 330 Module Eight Journal
 
 ## 1. How do I approach designing software?
