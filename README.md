@@ -2,7 +2,7 @@
 
 ## 1. How do I approach designing software?
 
-My design process for the 3D desk scene started with the original 2D flat-lay image I selected back in Module 1. I broke down each object into basic primitives (boxes, cylinders, tori, spheres, and cones) and planned their positions, rotations, and scales before writing any code.
+My design process for the 3D desk scene started with the original 2D flat-lay image I selected back in Module One. I broke down each object into basic primitives (boxes, cylinders, tori, spheres, and cones) and planned their positions, rotations, and scales before writing any code.
 
 **New design skills gained:**
 - Breaking complex real-world objects into combinations of simple geometric shapes
