@@ -1,3 +1,39 @@
+# CS 330 Module Eight Journal
+
+## 1. How do I approach designing software?
+
+My design process for the 3D desk scene started with the original 2D flat-lay image I selected back in Module 1. I broke down each object into basic primitives (boxes, cylinders, tori, spheres, and cones) and planned their positions, rotations, and scales before writing any code.
+
+**New design skills gained:**
+- Breaking complex real-world objects into combinations of simple geometric shapes
+- Planning object placement and overall scene composition for visual balance
+- Using modular design through the `SceneManager` class to keep the codebase organized and maintainable
+
+This structured approach helped me stay organized and iterate efficiently. In future work, I plan to continue using this “break it down into primitives first” method when designing game assets or 3D environments.
+
+## 2. How do I approach developing programs?
+
+I followed an incremental development process throughout all the milestones. I started with basic object placement, then added textures, lighting, camera controls, and finally implemented the complex texturing technique on the pinecone.
+
+**Key development strategies used:**
+- Building and testing one object at a time before moving on to the next
+- Heavy use of iteration — constantly adjusting positions, scales, rotations, and textures based on real-time feedback
+- Reusing the provided manager classes (`SceneManager`, `ViewManager`, `ShaderManager`) to keep code modular and organized
+
+My development approach evolved significantly from the early milestones. I went from simply placing shapes to thinking about lighting, texturing, performance, and clean code organization. The iterative nature of the project helped me catch issues early and steadily improve the final scene.
+
+## 3. How can computer science help me in reaching my goals?
+
+Computational graphics and visualizations have given me a much stronger foundation for my long-term goal of developing video games and Minecraft mods.
+
+**New knowledge and skills gained:**
+- Understanding how 3D objects are constructed from basic primitives
+- Working with textures, lighting systems, and camera controls
+- Implementing complex texturing techniques (blending two textures on the pinecone)
+- Organizing large codebases using manager classes and reusable functions
+
+Even though I will likely use game engines like Unity or Godot instead of raw OpenGL for future 3D modeling, knowing what happens “under the hood” gives me a much better understanding of performance, asset creation, and scene composition. I plan to expand on these skills by applying them to personal game projects, modding, and eventually building my own indie game studio.
+
 # CS 320 Module Eight Journal
 
 Reflecting on the work I’ve done in these projects has been very valuable. It helped me better understand how to write clean, reliable code and how important testing is in software development.
