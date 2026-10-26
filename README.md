@@ -1,3 +1,29 @@
+# CS 360 Module Eight Journal
+
+## Requirements and Goals
+
+The app is a personal weight tracker. The user needs a place to record a daily weight, see the saved entries, set one goal, and optionally get a text when a new weight meets that goal. The data has to stay after the app is closed, and the rest of the app has to keep working if the user declines SMS permission.
+
+## Screens and Features
+
+Five screens support that. Login handles a new account or an existing one. The grid shows the goal and the saved weights, with Add, Edit, and Delete on the rows. Add daily weight and Set goal are separate screens that return to the grid. Goal alerts asks for a phone number and SMS permission, and it explains that declining still leaves logging intact. The layouts keep the title, the content, and the actions in the same order on every screen so the path stays predictable. That worked because a user can finish the main task without opening the SMS screen at all.
+
+## Coding Approach
+
+I built one path at a time: create account and log in against SQLite, then add and read, then delete, then update, then the goal check and the text. The in-memory store from the UI project was replaced by a database helper with users, weights, and goals tables. The same pattern works later on any app that has to keep data between sessions. Get the write and the read working, then add the optional features around them.
+
+## Testing
+
+I tested on the emulator after each path. Create an account, log in, add a weight, edit it, delete one, set a goal, close the app, and log in again. I also tried a wrong password and both SMS choices. That mattered because an in-memory list looks fine until the app is closed. The close-and-reopen check showed the rows and the goal were actually in the database. The goal-reached toast showed the send path ran even though the emulator cannot deliver a real text.
+
+## Challenge
+
+The hard part was keeping the optional text from blocking the main app. The permission is requested only on the Goal alerts screen, the phone number is saved only if the user allows it, and a denied or skipped permission still lets login and the grid work. That split was not in the first UI pass. It had to be added once the database and the send check were in place.
+
+## Strongest Component
+
+The database layer is the piece that shows the full set of skills. Login checks or creates a user, the grid reads the weights, add inserts a row, edit updates one, and delete removes one. The same helper stores the goal. That is the create, read, update, and delete work the project asked for, and it is what makes the screens from the earlier project into a working app.
+
 # CS 340 Module Eight Journal
 
 ## How do you write programs that are maintainable, readable, and adaptable?
